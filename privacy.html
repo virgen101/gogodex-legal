@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GogoDex — Privacy Policy</title>
+<style>
+:root { color-scheme: light dark; --bg:#fff; --fg:#1c1c1e; --muted:#6b6b70;
+        --line:#e5e5ea; --accent:#e34a33; --chip:#f7f7f9; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#111113; --fg:#f2f2f7; --muted:#9a9aa0; --line:#2c2c2e;
+          --accent:#ff7a63; --chip:#1c1c1f; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); line-height:1.65;
+       font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+h1 { font-size: 28px; line-height:1.25; margin: 0 0 8px; letter-spacing:-0.02em; }
+h2 { font-size: 20px; margin: 40px 0 10px; letter-spacing:-0.01em; }
+h3 { font-size: 16px; margin: 24px 0 6px; }
+p { margin: 12px 0; }
+hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+blockquote { margin:20px 0; padding:14px 16px; background:var(--chip);
+             border-left:3px solid var(--accent); border-radius:8px; color:var(--muted); }
+ul { padding-left:20px; } li { margin:6px 0; }
+a { color: var(--accent); }
+code { background:var(--chip); padding:1px 5px; border-radius:4px; font-size:0.9em; }
+.tw { overflow-x:auto; margin:16px 0; }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line);
+        vertical-align:top; }
+th { color:var(--muted); font-weight:600; font-size:13px; }
+.langs { display:flex; gap:8px; margin-bottom:28px; }
+.langs a { padding:6px 14px; border-radius:999px; background:var(--chip);
+           text-decoration:none; font-size:14px; color:var(--fg); }
+.langs a[aria-current] { background:var(--accent); color:#fff; }
+</style>
+</head>
+<body><div class="wrap">
+<nav class="langs"><a href="/gizlilik">Türkçe</a><a href="/privacy" aria-current="page">English</a></nav>
+<h1>GogoDex — Privacy Policy</h1>
+<p><strong>Last updated:</strong> 6 August 2026 <strong>Data controller:</strong> Kirakeep Bilgisayar Yazılım A.Ş. Bebek Mahallesi, Vezirköşkü Sokak, Martı Apartmanı No: 8 D:1, Beşiktaş/İstanbul, Türkiye Tax office: Beşiktaş — Tax ID 563 138 9046 <strong>Contact:</strong> support@gogodex.app</p>
+<blockquote>This document explains how GogoDex handles your data. The short version: <strong>Your records live on your phone.</strong> If you create an account, a copy is kept on our server as a backup. We do not sell your data, do not use it for advertising, and do not share it with third parties.</blockquote>
+<hr>
+<h2>1. What data we process</h2>
+<h3>1.1 Records you create</h3>
+<p>This is what the whole app is built around:</p>
+<ul><li>People (name, title, company, phone, email, address, social links, photo)</li><li>Notes and meeting records (pre/post notes, decisions, follow-up items)</li><li>Places (address, parking/floor/entry notes)</li><li>Tags, files, scanned business cards, voice notes</li></ul>
+<h3>1.2 Account information</h3>
+<p>If you create an account: your <strong>email address</strong> and a **hashed form of your password**. The password itself is never stored and cannot be read by us.</p>
+<p>If you sign in with Apple: the identifier Apple provides and, if you choose to share it, your email address. If you use &quot;Hide My Email&quot;, we never see your real address.</p>
+<h3>1.3 What device permissions give us access to</h3>
+<div class='tw'><table><thead><tr><th>Permission</th><th>What for</th><th>Where it goes</th></tr></thead><tbody><tr><td><strong>Contacts</strong></td><td>Importing people you choose into your Dex</td><td>Only the people <strong>you select</strong> enter the app. GogoDex <strong>never writes anything back</strong> to your contacts.</td></tr><tr><td><strong>Calendar</strong></td><td>Showing upcoming meetings, matching attendees to your people</td><td>Meeting details are brought into the app. It can create a follow-up event if you ask.</td></tr><tr><td><strong>Location</strong></td><td>Estimated travel time to a meeting</td><td><strong>Not stored.</strong> Used in the moment, never sent to the server.</td></tr><tr><td><strong>Camera</strong></td><td>Scanning business cards and documents</td><td>Images stay <strong>on your device only</strong>.</td></tr><tr><td><strong>Microphone</strong></td><td>Voice notes after meetings</td><td>Recordings stay <strong>on your device only</strong>.</td></tr></tbody></table></div>
+<p>Each permission is requested the first time you use that feature — never all at once. The app works without them; only that feature stays off.</p>
+<h3>1.4 What we do not process</h3>
+<ul><li>No advertising identifiers, no trackers.</li><li>No analytics or usage telemetry.</li><li>No location history.</li><li>Voice recordings are <strong>never uploaded</strong>.</li><li>If you connect email, only the <strong>subject and a short preview</strong> are stored; <strong>the content of your emails is never stored.</strong></li></ul>
+<hr>
+<h2>2. Where your data is stored</h2>
+<p><strong>Your phone comes first.</strong> The app works fully offline.</p>
+<p>When you create an account, a copy of your records is uploaded to the server as a backup. The infrastructure is <strong>Supabase</strong> (PostgreSQL). Data is encrypted in transit with TLS and encrypted at rest on disk.</p>
+<p><strong>Only you can read it.</strong> Row Level Security is enabled in the database: every record is tied to your account and cannot be read from another user&#x27;s account. A request that is not signed in sees nothing at all.</p>
+<blockquote><strong>Not yet available:</strong> Restoring from the server to your phone, and syncing across devices, do not exist yet. Backups are taken; this document will be updated when restore ships.</blockquote>
+<p>Photos, audio recordings and document files are <strong>not uploaded</strong> at this time — they stay on your device.</p>
+<hr>
+<h2>3. Other people&#x27;s data (important)</h2>
+<p>Most of the people you save in GogoDex are <strong>third parties</strong>. You are the one entering their data.</p>
+<ul><li>That data is tied to <strong>your</strong> account only; no other user can see it.</li><li>We do not market to these people, do not contact them, and do not share their data with anyone.</li><li>When you delete a person, their notes, interactions and files are deleted too.</li><li><strong>Your responsibility:</strong> processing the data of the people you save, on a lawful basis under GDPR/KVKK and applicable law, is your obligation. If you use the app for business purposes, your own transparency obligations continue to apply.</li><li>If someone you saved asks for their data to be erased, deleting that person in the app is sufficient.</li></ul>
+<hr>
+<h2>4. Legal basis (GDPR Art. 6 / KVKK Art. 5)</h2>
+<div class='tw'><table><thead><tr><th>Processing</th><th>Legal basis</th></tr></thead><tbody><tr><td>Account creation and session management</td><td>Performance of a contract</td></tr><tr><td>Storing and backing up your records</td><td>Performance of a contract</td></tr><tr><td>Contacts / calendar / location access</td><td><strong>Your explicit consent</strong> (granted via the device permission, withdrawable at any time)</td></tr><tr><td>Security and abuse prevention</td><td>Legitimate interest</td></tr></tbody></table></div>
+<p>You can withdraw device permissions at any time in iOS Settings &gt; GogoDex.</p>
+<hr>
+<h2>5. How long we keep it</h2>
+<p>Your records are kept until you delete them or close your account.</p>
+<p><strong>When you delete your account</strong> (in the app: Settings &gt; Delete Account), your account and all of your records on the server are <strong>permanently deleted</strong>. This cannot be undone and cannot be recovered from backups. The records on your phone are deleted in the same operation.</p>
+<hr>
+<h2>6. Your rights</h2>
+<p>Under GDPR and KVKK Art. 11 you may:</p>
+<ul><li>Ask whether your data is being processed and request information about it</li><li>Ask for it to be corrected</li><li><strong>Ask for it to be deleted</strong> — you can do this yourself, instantly, in the app</li><li><strong>Portability</strong> — Settings &gt; Export gives you all of your data as a JSON and file archive. You do not need to go through us.</li><li>Object to processing</li><li>Withdraw consent (by turning off device permissions)</li></ul>
+<p>For requests: <strong>support@gogodex.app</strong>. Requests are answered within <strong>30 days</strong> at the latest.</p>
+<hr>
+<h2>7. Third-party service providers</h2>
+<div class='tw'><table><thead><tr><th>Provider</th><th>What for</th><th>Data transferred</th></tr></thead><tbody><tr><td><strong>Supabase</strong> (database and authentication)</td><td>Account and backup</td><td>Account information and your records</td></tr><tr><td><strong>Apple</strong> (Sign in with Apple, App Store)</td><td>Sign-in and distribution</td><td>Apple&#x27;s own policy applies</td></tr><tr><td><strong>Resend</strong> (email delivery)</td><td>Password reset codes</td><td>Your email address and the message sent</td></tr></tbody></table></div>
+<p>We <strong>do not share or sell</strong> your data to ad networks, data brokers or any other third party.</p>
+<p><strong>International transfers:</strong> Supabase servers may be located outside your country. By creating an account you consent to this transfer. If you would like to request a specific region, contact us at the support address.</p>
+<hr>
+<h2>8. Children</h2>
+<p>GogoDex is not directed at children under 13 and we do not knowingly collect data from that age group.</p>
+<hr>
+<h2>9. Data breaches</h2>
+<p>In the event of a security breach affecting your data, affected individuals and the competent supervisory authority will be notified within the time limits required by law.</p>
+<hr>
+<h2>10. Changes to this policy</h2>
+<p>If this policy changes, the &quot;Last updated&quot; date on this page is revised. If the change is material, you will be informed inside the app.</p>
+</div></body></html>
